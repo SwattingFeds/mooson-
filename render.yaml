@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: monsoon-telegram-finder
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DISCORD_UPDATES_WEBHOOK
+        sync: false
+      - key: DISCORD_BUGS_WEBHOOK
+        sync: false
+      - key: DISCORD_SYSTEM_WEBHOOK
+        sync: false
+      - key: DISCORD_AVAILABLE_WEBHOOK
+        sync: false
+      - key: DISCORD_TAKEN_WEBHOOK
+        sync: false
